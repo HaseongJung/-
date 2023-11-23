@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS test</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Javascript Test</h1>
+        <div id="test"></div>
+        <script>
+            // 엘리먼트에 대한 참조 가져오기
+            const test = document.getElementById("test");
+            test.innerHTML = "<h3>Javascript coding</h3>"
+            // 웹페이지에 결과를 내보내기(출력, 렌더링)
+            console.log("Javascript coding...")
+            // 반지름 8인 원의 면적과 둘레를 계산해서 출력하기
+            let radius = [3, 5, 8, 11, 17];
+            const PI = 3.141592;
+            
+            let output = "<ul style='color: green'>";
+            //for (let i=0; i<radius.length; i++) {
+            //for (let i in radius) {     // for-in 구문: 배열의    색인을 순서대로 가져옴
+            for (let elem of radius) {    // for-of 구문, 배열의 원소값을 가져옴
+                let area = elem ** 2 * PI;
+                let round = elem *2 * PI;
+
+                output += "<li>면적: " + area.toFixed(2) ;
+                output += ", 둘레: ";
+                output += round.toFixed(2) + "</li>";
+            }
+            //test.innerHTML = "<a>면적: " + area + "</a>" + "<br>" + "<a>둘레: " + round + "</as>"
+            output += "</ul>";
+            test.innerHTML = output;
+            
+
+        </script>
+    </body>
+</html>
